@@ -70,6 +70,11 @@
   "Begin playing the playlist starting from song-number, default is 0."
   (send "play" song-number))
 
+(defcommand playid (song-id)
+  (check-args (or unsigned-byte null) song-id)
+  "Play song by its ID."
+  (send "playid" song-id))
+
 (defcommand stop ()
   "Stop playing."
   (send "stop"))
